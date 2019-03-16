@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Função Quadratica</title>
+    <link rel="stylesheet" href="styles/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="scripts/calculadora.js"></script>
+</head>
+<body>
+    <div class="main">
+            <div class="view">
+                    <form name="form">      
+                        <input id="big-txtview" type="textview" style="width:380px; height: 80px;" value="" readonly> <br>      
+                        <input id="a-txtview" class="txtview expressao" type="textview">
+                        <span class="coeficientes-letras expressao">x²</span>
+                        <span  class="sinais expressao">+</span>
+                        <input id="b-txtview" class="txtview expressao" type="textview">
+                        <span  class="coeficientes-letras expressao">x</span>
+                        <span  class="sinais expressao">+</span>
+                        <input id="c-txtview" class="txtview expressao" type="textview">
+                    </form>
+                </div>
+                <div class="botoes">
+                        <td><input onclick="calcular()" type="button" class="botao" value="Calcular"></td>                               
+                </div>
+
+    </div>
+    
+    
+
+
+    
+</body>
+</html>

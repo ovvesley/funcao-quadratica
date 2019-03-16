@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.botao{
+    
+    width: 400px;
+    height: 80px;
+    font-size: 40px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #00796B;
+    border-radius: 15px;
+    color: aliceblue;
+
+}
+.expressao{
+    position: relative;
+    left: 3%;
+    color:#212121;
+}
+.botao:hover{
+    background-color: #E64A19;
+    
+}
+
+.txtview{    
+    background-color: rgba(249, 249, 249, 0.301);
+    border-radius: 3px;
+    height: 40px;
+    width: 40px;
+    margin: 2px;
+    font-size: 20px;
+    padding: 6px;
+    border: none;
+}
+.sinais{   
+    font-weight: inherit;
+    font-size: 30px;    
+    margin: 20px;
+    top: 5px;
+}
+.coeficientes-letras{
+    font-weight: bold;
+    position: relative;
+    top: 8px;
+    font-size: 40px;
+    margin-left:-5px;
+    margin-bottom: -2;
+}
+
+.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);    
+}
+#big-txtview{
+    
+    background-color: rgba(249, 249, 249, 0.301);
+    border-radius: 40px;
+    font-size: 35px;
+    text-align: center;
+    border: none;
+}
+.view{
+
+}
+body{
+    background-color: #009688;
+}
