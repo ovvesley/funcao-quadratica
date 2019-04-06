@@ -7,24 +7,40 @@
     <link rel="stylesheet" href="styles/estilos.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="scripts/calculadora.js"></script>
+    <script src="scripts/slide.js"></script>
+    <script src="/scripts/canvas-config.js"></script>
+    <link rel="stylesheet" href="styles/detalhesSlides.css">
 </head>
-<body>
+<body  onload="loadCompletePage()">
     <div class="main">
-            <div class="view">
-                    <form name="form">      
-                        <input id="big-txtview" type="textview" style="width:380px; height: 80px;" value="" readonly> <br>      
-                        <input id="a-txtview" class="txtview expressao" type="textview">
-                        <span class="coeficientes-letras expressao">x²</span>
-                        <span  class="sinais expressao">+</span>
-                        <input id="b-txtview" class="txtview expressao" type="textview">
-                        <span  class="coeficientes-letras expressao">x</span>
-                        <span  class="sinais expressao">+</span>
-                        <input id="c-txtview" class="txtview expressao" type="textview">
-                    </form>
+        <div class="slide-content">
+            <button class="button-slide button-esquerda" onclick="clickDivs(-1)">&#10094;</button>
+            <button class="button-slide button-direita" onclick="clickDivs(1)">&#10095;</button>
+            <!-- a = 2, b = 1 e c = – 3.  2x² + x – 3 = 0 são 1 e – 3/2 -->
+            <div class="principal slide">
+                    <div class="view">
+                            <form name="form">      
+                                <input id="big-txtview" type="textview" style="width:380px; height: 80px;" value="" readonly> <br>      
+                                <input id="a-txtview" class="txtview expressao" type="textview">
+                                <span class="coeficientes-letras expressao">x²</span>
+                                <span  class="sinais expressao">+</span>
+                                <input id="b-txtview" class="txtview expressao" type="textview">
+                                <span  class="coeficientes-letras expressao">x</span>
+                                <span  class="sinais expressao">+</span>
+                                <input id="c-txtview" class="txtview expressao" type="textview">
+                            </form>
+                    </div>
+                    <div class="botoes">
+                                <td><input onclick="calcular()" type="button" class="botao" value="Calcular"></td>                               
+                    </div>
                 </div>
-                <div class="botoes">
-                        <td><input onclick="calcular()" type="button" class="botao" value="Calcular"></td>                               
-                </div>
+            <div class="grafico-canvas slide">
+                    <canvas id="canvas" width="500" height="500" style="border:2px solid black"></canvas>        
+            </div>  
+        </div>
+        
+        
+            
 
     </div>
     

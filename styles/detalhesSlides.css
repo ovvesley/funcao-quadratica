@@ -1,0 +1,17 @@
+.button-slide{  
+    position: relative;
+    left: 5%;
+    width: 30px;
+    height: 35px;
+    font-size: 13px;
+    margin: 1px;
+    border: none;
+    cursor: pointer;
+    background-color: #00796B;
+    border-radius: 10px;
+    color: aliceblue;
+
+}
+.button-slide:hover{
+     background-color: #E64A19;    
+}

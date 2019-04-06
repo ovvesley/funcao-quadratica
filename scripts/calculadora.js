@@ -8,28 +8,48 @@ function quadraticaEquacao(a,b,c){
 
     var delta = delta(a,b,c)
 
-    if(delta === 0){
-        var resultado = -(b)/(2*a)
-        resultado = resultado.toFixed(2);
-        console.log(resultado)
-        return 'x = ' + resultado + ' ;'
+    if(delta === 0)
+    {
+        return  {
+            x1: -(b)/(2*a).toFixed(2),
+            x2: undefined,
+            delta: delta
+        }
     }
-    else if (delta>0)  {
-        var resultado1 = (-(b) + delta) / (2*a)
-        var resultado2 = (-(b) - delta) / (2*a)
-        resultado1 = resultado1.toFixed(2);
-        resultado2 = resultado2.toFixed(2);
-        return 'x\'\ = ' + resultado1 + ' ; x\"\ = ' + resultado2 +";"
+    else if (delta>0)  
+    {
+        return  {
+            x1: (-(b) + delta) / (2*a).toFixed(2),
+            x2: (-(b) - delta) / (2*a).toFixed(2),
+            delta: delta.toFixed(2)
+        }
     }
-    else{
-        return 'não reais'
+    else
+    {
+        return  {
+            x1: undefined,
+            x2: undefined,
+            delta: delta
+        }
     }  
 
 }
 
 function showView (resultado){
     var display = document.getElementById('big-txtview') 
-    display.value = resultado;    
+    display.value = resultado;   
+    
+    if(resultado.delta === 0){
+        display.value = 'x1: ' + resultado.x1 + ' ;'
+
+    }else if (resultado.delta > 0){
+        display.value = 'x1: ' + resultado.x1.toFixed(2) + ' ; ' + 'x2: ' + resultado.x2.toFixed(2) + ' ;'
+    }
+    else{
+        display.value = 'nao reais'
+    }
+
+    
 }
 
 function clearInput(a,b,c){
@@ -39,6 +59,7 @@ function clearInput(a,b,c){
 }
 
 function calcular(){
+    
     var coefAEle = document.getElementById('a-txtview')    
     var coefBEle = document.getElementById('b-txtview')  
     var coefCEle = document.getElementById('c-txtview')     
@@ -46,6 +67,13 @@ function calcular(){
     var coefB = getValorCoeficiente(coefBEle)
     var coefC = getValorCoeficiente(coefCEle)     
     var resultado = quadraticaEquacao(coefA, coefB, coefC)
+    let f = {
+        resultado: resultado,
+        coefA: coefA,
+        coefB: coefB,
+        coefC: coefC,
+    }
+    initCanvas(f);
     showView(resultado)
     clearInput(coefAEle, coefBEle, coefCEle)
 }
