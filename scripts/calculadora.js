@@ -8,20 +8,23 @@ function quadraticaEquacao(a,b,c){
 
     var delta = delta(a,b,c)
 
-    if(delta === 0){
+    if(delta === 0)
+    {
         var resultado = -(b)/(2*a)
         resultado = resultado.toFixed(2);
         console.log(resultado)
         return 'x = ' + resultado + ' ;'
     }
-    else if (delta>0)  {
+    else if (delta>0)  
+    {
         var resultado1 = (-(b) + delta) / (2*a)
         var resultado2 = (-(b) - delta) / (2*a)
         resultado1 = resultado1.toFixed(2);
         resultado2 = resultado2.toFixed(2);
         return 'x\'\ = ' + resultado1 + ' ; x\"\ = ' + resultado2 +";"
     }
-    else{
+    else
+    {
         return 'não reais'
     }  
 
