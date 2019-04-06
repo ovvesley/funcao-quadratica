@@ -28,6 +28,8 @@ function clickDivs(incremento){
 function loadCompletePage(){
     let divCanvas = document.getElementsByClassName('grafico-canvas')
     divCanvas[0].style.display = 'none'
+    document.getElementById('canvas').getContext('2d').translate(255,255)
+
     
 }
 //---------------------------
