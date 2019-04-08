@@ -4,16 +4,16 @@ function getValorCoeficiente(element){
 }
 
 function quadraticaEquacao(a,b,c){
-    function delta(a,b,c){return Math.sqrt((b*b)-(4*(a)*(c)))}
+    function delta(a,b,c){return ((b*b)-(4*(a)*(c)))}
 
-    var delta = delta(a,b,c)
+    var delta = Math.sqrt(delta(a,b,c))
 
     if(delta === 0)
     {
         return  {
             x1: -(b)/(2*a).toFixed(2),
             x2: undefined,
-            delta: delta
+            delta: delta**2
         }
     }
     else if (delta>0)  
@@ -21,7 +21,7 @@ function quadraticaEquacao(a,b,c){
         return  {
             x1: (-(b) + delta) / (2*a).toFixed(2),
             x2: (-(b) - delta) / (2*a).toFixed(2),
-            delta: delta.toFixed(2)
+            delta: delta**2
         }
     }
     else
@@ -29,7 +29,7 @@ function quadraticaEquacao(a,b,c){
         return  {
             x1: undefined,
             x2: undefined,
-            delta: delta
+            delta: delta**2
         }
     }  
 
@@ -72,7 +72,10 @@ function calcular(){
         coefA: coefA,
         coefB: coefB,
         coefC: coefC,
+        xVertice: - (coefB /2* coefA),
+        yVertice: - (resultado.delta / 4 * coefA)
     }
+    console.log(f)
     initCanvas(f);
     showView(resultado)
     clearInput(coefAEle, coefBEle, coefCEle)
